@@ -1,0 +1,292 @@
+body {
+  margin: 0;
+  background: #f4f4f4;
+  color: #333;
+  cursor: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">\
+<text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="30">🔧</text>\
+</svg>') 32 32, auto;
+}
+
+/*Botao volta ao inicio*/
+.btn-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #e63946;       /* cor de fundo */
+  color: white;              /* cor da seta */
+  font-size: 20px;
+  font-weight: bold;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;        /* formato circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background 0.3s, transform 0.2s;
+  z-index: 1000;             /* sempre por cima */
+}
+
+.btn-top:hover {
+  background: #b31d2d;       /* cor mais escura no hover */
+  transform: scale(1.1);     /* aumenta um pouco */
+}
+
+/* Header e nav*/
+/* Reset básico para evitar diferenças entre navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;  /* Logo à esquerda, links à direita */
+  align-items: center;
+  padding: 12px 32px;
+  background-color: #111;          /* cor de fundo do nav */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* Logo */
+nav img {
+  border-radius: 8px;              /* opcional: cantos arredondados */
+  transition: transform .3s;
+  background-color: white;
+}
+
+nav img:hover {
+  transform: scale(1.05);          /* leve zoom ao passar o mouse */
+}
+
+/* Container dos links */
+nav span {
+  display: flex;
+  gap: 24px;                       /* espaçamento entre os links */
+}
+
+/* Links */
+.navegador {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  position: relative;
+  padding: 6px 0;
+  transition: color .3s;
+}
+
+/* Efeito hover: underline animado */
+.navegador::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #e63946;   /* cor destaque */
+  transition: width .3s;
+}
+
+.navegador:hover {
+  color: #e63946;
+}
+
+.navegador:hover::after {
+  width: 100%;
+}
+
+
+h1 {
+  margin: 0;
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.produto {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.2s;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+}
+
+.produto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.produto h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.produto p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e63946;
+}
+
+.produto button {
+  background: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.produto button:hover {
+  background: #e65c00;
+}
+
+
+
+
+/* Fornecedores */
+.fornecedores {
+  background: url('../imagens/fundo2.jpg') no-repeat center center/cover;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.fornecedores::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7); /* escurece para contraste melhor */
+}
+
+.fornecedores-text {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.fornecedores h1 {
+  font-size: 3rem;
+  color: #ff4d4d;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fornecedores p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.fornecedores p strong {
+  color: #ffcc00;
+}
+
+/* Animação suave */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Fim dos fornecedores */
+
+
+
+
+/* Footer */
+/* Layout das colunas */
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-left, .footer-right {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+
+/* Ícones sociais */
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a svg {
+  transition: color 0.3s ease;
+  color: #fff; /* cor padrão (branco) */
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #e60000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #b00000;
+}
+
+/* Instagram hover */
+.social-links a[aria-label="Instagram"]:hover svg {
+  color: #e1306c; /* cor rosa do Instagram */
+}
+
+/* Facebook hover */
+.social-links a[aria-label="Facebook"]:hover svg {
+  color: #1877f2; /* azul do Facebook */
+}
+
+.footer-right .maps {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+/* Fim do footer */
